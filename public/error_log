@@ -1,0 +1,13 @@
+[02-Sep-2024 16:02:17 America/Mexico_City] PHP Warning:  Undefined variable $creditos_a_deducir in /home2/regis112/public_html/public/solicitud.php on line 76
+[02-Sep-2024 16:02:17 America/Mexico_City] PHP Warning:  Undefined variable $creditos_a_deducir in /home2/regis112/public_html/public/solicitud.php on line 78
+[02-Sep-2024 16:02:17 America/Mexico_City] PHP Warning:  Undefined variable $creditos_a_deducir in /home2/regis112/public_html/public/solicitud.php on line 90
+[03-Sep-2024 19:18:20 America/Mexico_City] PHP Warning:  file_get_contents(https://api.telegram.org/bot6845776951:AAFdC8gBR_83s5WCQpjE1xVFIpO7j7SaduU/sendMessage?chat_id=-1002207825269&amp;text=Nuevo+registro+en+proceso%3A%0ACURP%3A+Aahh100430mmnlrna1%0ATipo+De+Acta%3A+verificadasRapidas%0AUsuario%3A+Dei): Failed to open stream: HTTP request failed! in /home2/regis112/public_html/public/solicitud.php on line 133
+[05-Sep-2024 11:43:38 America/Mexico_City] PHP Warning:  Undefined array key "username" in /home2/regis112/public_html/public/login.php on line 6
+[05-Sep-2024 11:43:38 America/Mexico_City] PHP Warning:  Undefined array key "password" in /home2/regis112/public_html/public/login.php on line 7
+[16-Sep-2024 19:20:36 America/Mexico_City] PHP Parse error:  syntax error, unexpected identifier "robots", expecting "," or ";" in /home2/regis112/public_html/public/login.php on line 23
+[16-Sep-2024 19:20:48 America/Mexico_City] PHP Parse error:  syntax error, unexpected identifier "robots", expecting "," or ";" in /home2/regis112/public_html/public/login.php on line 23
+[16-Sep-2024 19:21:00 America/Mexico_City] PHP Parse error:  syntax error, unexpected identifier "robots", expecting "," or ";" in /home2/regis112/public_html/public/login.php on line 23
+[16-Sep-2024 19:21:13 America/Mexico_City] PHP Parse error:  syntax error, unexpected identifier "robots", expecting "," or ";" in /home2/regis112/public_html/public/login.php on line 23
+[16-Sep-2024 19:21:24 America/Mexico_City] PHP Parse error:  syntax error, unexpected identifier "robots", expecting "," or ";" in /home2/regis112/public_html/public/login.php on line 23
+[16-Sep-2024 19:21:46 America/Mexico_City] PHP Parse error:  syntax error, unexpected identifier "robots", expecting "," or ";" in /home2/regis112/public_html/public/login.php on line 23
+[16-Sep-2024 19:21:52 America/Mexico_City] PHP Parse error:  syntax error, unexpected identifier "robots", expecting "," or ";" in /home2/regis112/public_html/public/login.php on line 23

@@ -1,0 +1,71 @@
+   <div id="statusContainer" class="status-container" style="display: none;">
+    <!-- Mostrar el conteo de procesos finalizados hoy -->
+    <h3>Procesos Finalizados Hoy</h3>
+    <?php
+    // Contar solicitudes finalizadas del día actual
+    $stmt = $pdo->prepare("SELECT COUNT(*) as finalizados_hoy 
+                           FROM solicitudes 
+                           WHERE usuario_id = :usuario_id 
+                           AND estatus = 1
+                           AND DATE(fecha_solicitud) = CURDATE()");
+    $stmt->execute(['usuario_id' => $user['id']]);
+    $finalizados_hoy = $stmt->fetchColumn();
+
+    // Mostrar el número de procesos finalizados hoy
+    echo "<p><strong>Total de procesos finalizados hoy:</strong> {$finalizados_hoy}</p>";
+    ?>
+
+    <!-- Mostrar solicitudes del día actual -->
+    <h3>Estado de Solicitudes de Hoy</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>CURP</th>
+                <th>Estatus</th>
+                <th>Motivo</th>
+                <th>Tipo de Acta</th>
+                <th>Documento</th>
+                <th>Hora y Día</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            // Obtener solo los campos necesarios de las solicitudes del usuario actual realizadas hoy
+            $stmt = $pdo->prepare("SELECT id, curp, estatus, tipo, motivo, documento_pdf, fecha_solicitud 
+                                   FROM solicitudes 
+                                   WHERE usuario_id = :usuario_id 
+                                   AND DATE(fecha_solicitud) = CURDATE() 
+                                   ORDER BY estatus ASC, id DESC");
+            $stmt->execute(['usuario_id' => $user['id']]);
+            while ($row = $stmt->fetch()) {
+                $estatus_text = '';
+                switch ($row['estatus']) {
+                    case 0:
+                        $estatus_text = '<span class="estatus-pendiente">Pendiente</span>';
+                        break;
+                    case 1:
+                        $estatus_text = '<span class="estatus-finalizado">Finalizado</span>';
+                        break;
+                    case 2:
+                        $estatus_text = '<span class="estatus-rechazado">Rechazado</span>';
+                        break;
+                }
+                $documento_text = $row['documento_pdf'] 
+                    ? "<a href='../public/uploads/{$row['documento_pdf']}' download class='btn btn-success'>Descargar</a>" 
+                    : "En Proceso";
+                
+                echo "<tr>
+                    <td>{$row['id']}</td>
+                    <td>{$row['curp']}</td>
+                    <td>{$estatus_text}</td>
+                    <td>{$row['motivo']}</td>
+                    <td>{$row['tipo']}</td>
+                    <td>{$documento_text}</td>
+                    <td>{$row['fecha_solicitud']}</td>
+                </tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+</div>
