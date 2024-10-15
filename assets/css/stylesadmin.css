@@ -152,6 +152,7 @@ button {
   margin-top: 100px;
   height: 500px;
   overflow-y: auto;
+  width: 110%;
 }
 
 .table-container::-webkit-scrollbar {
@@ -179,7 +180,6 @@ button {
 .table-container2 {
   height: 500px;
   overflow-y: auto;
-  overflow-x: auto;
 }
 
 .table {
@@ -210,7 +210,6 @@ button {
 .table-container2 {
   height: 500px;
   overflow-y: auto;
-  overflow-x: auto;
 }
 
 .table2 {
