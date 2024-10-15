@@ -12,30 +12,29 @@
 
 <body>
     <script>
-        let sidebarVisible = true; 
-        function toggleSidebar() {
-            sidebarVisible = !sidebarVisible; 
+       let sidebarVisible = true; // Estado inicial del sidebar
 
-            const sidebar = document.querySelector('.sidebar');
-            const mainContent = document.querySelector('.main-content');
-            const toggleButton = document.querySelector('.toggle-sidebar');
-            const form = document.getElementById('estadoServidorForm');
+function toggleSidebar() {
+    sidebarVisible = !sidebarVisible; // Cambia el estado
 
-            if (sidebarVisible) {
-                sidebar.classList.remove('hidden'); 
-                mainContent.classList.remove('full-width'); 
-                mainContent.classList.add('normal');
-                toggleButton.textContent = '☰'; 
-                form.classList.remove('hidden-form'); 
-            } else {
-                sidebar.classList.add('hidden'); 
-                mainContent.classList.add('full-width'); 
-                mainContent.classList.remove('normal');
-                toggleButton.textContent = '☰'; 
-                form.classList.add('hidden-form'); 
-            }
-        }
-        document.querySelector('.toggle-sidebar').addEventListener('click', toggleSidebar);
+    const sidebar = document.querySelector('.sidebar');
+    const mainContent = document.querySelector('.main-content');
+    const toggleButton = document.querySelector('.toggle-sidebar');
+
+    if (sidebarVisible) {
+        sidebar.classList.remove('hidden'); // Muestra el sidebar
+        mainContent.classList.remove('full-width'); // Ajusta el contenido a la normalidad
+        mainContent.classList.add('normal');
+        toggleButton.textContent = '☰'; // Cambia el texto del botón
+        toggleButton.style.left = '25%'; // Mueve el botón a su posición original
+    } else {
+        sidebar.classList.add('hidden'); // Oculta el sidebar
+        mainContent.classList.add('full-width'); // Centra el contenido
+        mainContent.classList.remove('normal');
+        toggleButton.textContent = '☰'; // Cambia el texto del botón
+        toggleButton.style.left = '5%'; // Mueve el botón hacia la izquierda
+    }
+}
     </script>
 
 

@@ -20,16 +20,15 @@ body {
 .toggle-sidebar {
   position: absolute; 
   top: 10px;
-  left: 75%;
+  left: 2%;
   z-index: 1; 
   padding: 5px 10px; 
-  background-color: #7f8c8d; 
-  color: #C1C4C9; 
+  background-color: grey; 
+  color: white; 
   border: none; 
   font-size: 12px; 
   cursor: pointer; 
   border-radius: 3px; 
-  
 }
 
 .main-content {
@@ -180,6 +179,7 @@ button {
 .table-container2 {
   height: 500px;
   overflow-y: auto;
+  overflow-x: auto;
 }
 
 .table {
@@ -191,7 +191,7 @@ button {
 .table th,
 .table td {
   padding: 12px;
-  color:#857F8B;
+  color: white;
   text-align: center;
   border: 1px solid #dee2e6;
 }
@@ -210,6 +210,7 @@ button {
 .table-container2 {
   height: 500px;
   overflow-y: auto;
+  overflow-x: auto;
 }
 
 .table2 {
@@ -220,7 +221,7 @@ button {
 
 .table2 th,
 .table2 td {
-  color:#857F8B;
+  color:white;
   text-align: center;
   border: 1px solid #dee2e6;
 }
@@ -329,11 +330,16 @@ h5{
       transform: translateX(-100%);
   }
 
-  .toggle-sidebar {
-      left: 25%;
-     
-  }
   .hidden-form {
     display: block;
   }
+  .toggle-sidebar {
+    position: absolute; /* O fija, dependiendo del diseño */
+    left: 25%; /* Posición inicial con el sidebar visible */
+
+}
+
+.sidebar.hidden + .toggle-sidebar {
+    left: 0; /* Mover el botón completamente a la izquierda cuando el sidebar está oculto */
+}
 }

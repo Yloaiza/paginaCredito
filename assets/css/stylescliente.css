@@ -19,7 +19,7 @@ body {
 .toggle-sidebar {
     position: absolute; 
     top: 10px;
-    left: 75%;
+    left: 2%;
     z-index: 1; 
     padding: 5px 10px; 
     background-color: grey; 
@@ -237,9 +237,17 @@ body {
         height: auto;
     }
 
-    .toggle-sidebar{
-        left: 25%;
-    }
+/* Estilos para el botón de toggle */
+.toggle-sidebar {
+    position: absolute; /* O fija, dependiendo del diseño */
+    left: 25%; /* Posición inicial con el sidebar visible */
+
+}
+
+.sidebar.hidden + .toggle-sidebar {
+    left: 0; /* Mover el botón completamente a la izquierda cuando el sidebar está oculto */
+}
+
     .table-responsive{
         height: 70vh;
     }

@@ -54,28 +54,30 @@
 
     ?>
     <script>
-        
-        let sidebarVisible = true; // Estado inicial del sidebar
+let sidebarVisible = true; // Estado inicial del sidebar
 
-        function toggleSidebar() {
-            sidebarVisible = !sidebarVisible; // Cambia el estado
+function toggleSidebar() {
+    sidebarVisible = !sidebarVisible; // Cambia el estado
 
-            const sidebar = document.querySelector('.sidebar');
-            const mainContent = document.querySelector('.main-content');
-            const toggleButton = document.querySelector('.toggle-sidebar');
+    const sidebar = document.querySelector('.sidebar');
+    const mainContent = document.querySelector('.main-content');
+    const toggleButton = document.querySelector('.toggle-sidebar');
 
-            if (sidebarVisible) {
-                sidebar.classList.remove('hidden'); // Muestra el sidebar
-                mainContent.classList.remove('full-width'); // Ajusta el contenido a la normalidad
-                mainContent.classList.add('normal');
-                toggleButton.textContent = '☰'; // Cambia el texto del botón
-            } else {
-                sidebar.classList.add('hidden'); // Oculta el sidebar
-                mainContent.classList.add('full-width'); // Centra el contenido
-                mainContent.classList.remove('normal');
-                toggleButton.textContent = '☰'; // Cambia el texto del botón
-            }
-        }
+    if (sidebarVisible) {
+        sidebar.classList.remove('hidden'); // Muestra el sidebar
+        mainContent.classList.remove('full-width'); // Ajusta el contenido a la normalidad
+        mainContent.classList.add('normal');
+        toggleButton.textContent = '☰'; // Cambia el texto del botón
+        toggleButton.style.left = '25%'; // Mueve el botón a su posición original
+    } else {
+        sidebar.classList.add('hidden'); // Oculta el sidebar
+        mainContent.classList.add('full-width'); // Centra el contenido
+        mainContent.classList.remove('normal');
+        toggleButton.textContent = '☰'; // Cambia el texto del botón
+        toggleButton.style.left = '5%'; // Mueve el botón hacia la izquierda
+    }
+}
+
     </script>
 
     <div class="container">
@@ -155,7 +157,7 @@
             $finalizados_hoy = $stmt->fetchColumn();
 
             // Mostrar el número de procesos finalizados hoy
-            echo "<p class='estatus-finalizado'><strong>Total de procesos finalizados hoy:</strong> {$finalizados_hoy}</p>";
+            echo "<p class='estatus-finalizado' style='color: #2ecc71'><strong>Total de procesos finalizados hoy:</strong> {$finalizados_hoy}</p>";
             ?>
 
             <!-- Mostrar solicitudes del día actual -->
